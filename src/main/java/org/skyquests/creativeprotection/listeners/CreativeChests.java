@@ -19,9 +19,9 @@ public class CreativeChests implements Listener {
         if (player.hasPermission("creativedisable.bypass")) {
             return;
         }
-        if (block.getType() == Material.CHEST || block.getType() == Material.ENDER_CHEST || block.getType() == Material.HOPPER || block.getType() == Material.FURNACE || block.getType() == Material.DISPENSER || block.getType() == Material.MINECART || block.getType() == Material.ENCHANTMENT_TABLE || block.getType() == Material.DROPPER || block.getType() == Material.ARMOR_STAND) {
+        if (block.getType() == Material.CHEST || block.getType() == Material.ENDER_CHEST || block.getType() == Material.HOPPER || block.getType() == Material.FURNACE || block.getType() == Material.DISPENSER || block.getType() == Material.MINECART || block.getType() == Material.ENCHANTMENT_TABLE || block.getType() == Material.DROPPER || block.getType() == Material.ARMOR_STAND || block.getType() == Material.DRAGON_EGG) {
             if (player.getGameMode() == GameMode.CREATIVE) {
-                player.sendMessage(ChatColor.RED + "You cannot open storage devices in creative");
+                player.sendMessage(ChatColor.RED + "You cannot use this device in creative");
                 event.setCancelled(true);
             }
         }
