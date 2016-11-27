@@ -16,6 +16,9 @@ public class CreativeInventory implements Listener {
     @EventHandler
     public void onPlayerGamemodeChangeEvent(PlayerGameModeChangeEvent event) {
         Player player = event.getPlayer();
+        if (player.hasPermission("creativedisable.bypass")) {
+            return;
+        }
         if (event.getNewGameMode() == GameMode.CREATIVE) {
             survivalInventory.put(player, player.getInventory().getContents());
             player.getInventory().clear();

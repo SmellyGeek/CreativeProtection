@@ -21,6 +21,9 @@ public class CreativeBlocks implements Listener {
         Player player = event.getPlayer();
         Block block = event.getBlockPlaced();
 
+        if (player.hasPermission("creativedisable.bypass")) {
+            return;
+        }
         if (player.getGameMode() == GameMode.CREATIVE) {
             blocks.add(block);
         }
@@ -31,6 +34,9 @@ public class CreativeBlocks implements Listener {
         Player player = event.getPlayer();
         Block block = event.getBlock();
 
+        if (player.hasPermission("creativedisable.bypass")) {
+            return;
+        }
         if (player.getGameMode() == GameMode.SURVIVAL && blocks.contains(block)) {
             player.sendMessage(ChatColor.RED + "You have to be in creative to break this block!");
             event.setCancelled(true);

@@ -9,6 +9,10 @@ public class CreativeDropItem implements Listener {
 
     @EventHandler
     public void onPlayerDropItem(PlayerDropItemEvent event) {
+        if (event.getPlayer().hasPermission("creativedisable.bypass")) {
+            return;
+        }
+
         if (event.getPlayer().getGameMode() == GameMode.CREATIVE) {
             event.setCancelled(true);
         }
