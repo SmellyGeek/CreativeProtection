@@ -19,7 +19,7 @@ public class CreativeChests implements Listener {
         if (player.hasPermission("creativedisable.bypass")) {
             return;
         }
-        if (block.getType() == Material.CHEST) {
+        if (block.getType() == Material.CHEST || block.getType() == Material.ENDER_CHEST) {
             if (player.getGameMode() == GameMode.CREATIVE) {
                 player.sendMessage(ChatColor.RED + "You cannot open chests in creative");
                 event.setCancelled(true);
