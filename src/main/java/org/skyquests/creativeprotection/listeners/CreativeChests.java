@@ -21,7 +21,7 @@ public class CreativeChests implements Listener {
         }
         if (block.getType() == Material.CHEST || block.getType() == Material.ENDER_CHEST || block.getType() == Material.HOPPER || block.getType() == Material.FURNACE || block.getType() == Material.DISPENSER || block.getType() == Material.MINECART || block.getType() == Material.ENCHANTMENT_TABLE || block.getType() == Material.DROPPER || block.getType() == Material.ARMOR_STAND) {
             if (player.getGameMode() == GameMode.CREATIVE) {
-                player.sendMessage(ChatColor.RED + "You cannot open chests in creative");
+                player.sendMessage(ChatColor.RED + "You cannot open storage devices in creative");
                 event.setCancelled(true);
             }
         }
