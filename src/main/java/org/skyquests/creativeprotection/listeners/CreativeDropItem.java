@@ -9,7 +9,7 @@ public class CreativeDropItem implements Listener {
 
     @EventHandler
     public void onPlayerDropItem(PlayerDropItemEvent event) {
-        if(event.getPlayer().getGameMode() == GameMode.CREATIVE) {
+        if (event.getPlayer().getGameMode() == GameMode.CREATIVE) {
             event.setCancelled(true);
         }
     }
