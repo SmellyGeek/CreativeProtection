@@ -1,5 +1,6 @@
 package org.skyquests.creativeprotection.listeners;
 
+import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -31,6 +32,7 @@ public class CreativeBlocks implements Listener {
         Block block = event.getBlock();
 
         if(player.getGameMode() == GameMode.SURVIVAL && blocks.contains(block)) {
+            player.sendMessage(ChatColor.RED + "You have to be in creative to break this block!");
             event.setCancelled(true);
         }
     }
