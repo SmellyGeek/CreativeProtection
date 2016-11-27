@@ -12,7 +12,7 @@ public class CreativeCommands implements Listener {
     public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
 
-        if (event.getMessage().contains("/sell")) {
+        if (event.getMessage().contains("/sell") || event.getMessage().contains("/ah")) {
             player.sendMessage(ChatColor.RED + "You can not perform this command while in creative.");
             event.setCancelled(true);
         }
